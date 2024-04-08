@@ -5,51 +5,62 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>文字数カウンター</title>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-            }
-
-            .container {
-                max-width: 800px;
-                margin: 0 auto;
-            }
-
-            h1 {
-                text-align: center;
-                margin-top: 20px;
-                margin-bottom: 20px;
-            }
-
-            textarea {
-                width: 100%;
-                height: 200px;
-                margin-top: 10px;
-                margin-bottom: 10px;
-                padding: 5px;
-            }
-
-            table {
-                margin: 0 auto;
-                margin-bottom: 20px;
-            }
-
-            td {
-                padding: 10px 10px;
-            }
-
-            div button {
-                display: flex;
-                margin: 0 auto;
-                justify-content: center;
-                align-items: center;
-                padding: 10px 20px;
-            }
-        </style>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="/css/style_macos.css">
     </head>
+
+    <!-- <body oncontextmenu="return false"> -->
 
     <body>
         <div class="container">
+
+            <div class="window">
+                <div class="titlebar">
+                    <div class="buttons">
+                        <div class="close"></div>
+                        <div class="hide"></div>
+                        <div class="full"></div>
+                    </div>
+                    <h1 class="windowtitle">文字数カウンター</h1>
+                </div>
+
+                <div class="windowinner">
+                    <div class="sidebar">
+                        <table id="output">
+                            <tr>
+                                <td>スペース含む</td>
+                                <td><span id="charCountWithSpace">0</span></td>
+                            </tr>
+                            <tr>
+                                <td>スペース無視</td>
+                                <td><span id="charCountWithoutSpace">0</span></td>
+                            </tr>
+                            <tr>
+                                <td>行数</td>
+                                <td><span id="lineCount">0</span></td>
+                            </tr>
+                            <tr>
+                                <td>段落数</td>
+                                <td><span id="paragraphCount">0</span></td>
+                            </tr>
+                            <tr>
+                                <td>原稿用紙数</td>
+                                <td><span id="manuscriptCount">0</span></td>
+                            </tr>
+                        </table>
+                        <div>
+                            <button onclick="resetCounts()">リセット</button>
+                        </div>
+                    </div>
+                    <div class="contents">
+                        <textarea id="inputText" placeholder="ここにテキストを入力してください" oninput="updateCounts()"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- <div class="container">
             <h1>文字数カウンター</h1>
             <textarea id="inputText" placeholder="ここにテキストを入力してください" oninput="updateCounts()"></textarea>
 
@@ -79,7 +90,7 @@
             <div>
                 <button onclick="resetCounts()">リセット</button>
             </div>
-        </div>
+        </div> -->
 
         <script src="main.js"></script>
     </body>
