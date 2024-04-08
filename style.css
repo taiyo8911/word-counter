@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 980px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+#inputText {
+    resize: none;
+    width: 100%;
+    height: 100%;
+    border: none;
+    font-size: 20px;
+}
+
+#output {
+    font-size: 20px;
+}
+
+.sidebar button {
+    width: 100%;
+    height: 30px;
+    background: #fff;
+    margin-top: 20px;
+    border: 1px solid #dfdfdf;
+    border-radius: 3px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+/* macos.css */
+.window {
+    width: 100%;
+    height: 600px;
+    background-color: rgba(236, 236, 236, 0.6);
+    border: 1px solid #696969;
+    border-radius: 5px;
+    box-shadow: 0 0 20px 5px #4a4a4a;
+    z-index: 0;
+}
+
+.titlebar {
+    width: 100%;
+    height: 20px;
+    background: #e1e1e1;
+    border-bottom: 1px solid #b6b6b6;
+    border-radius: 5px 5px 0 0;
+    display: flex;
+    align-items: center;
+}
+
+h1.windowtitle {
+    font-weight: normal;
+    width: 100%;
+    margin-left: calc(-55px - 10px);
+    font-size: 12px;
+    text-align: center;
+}
+
+.buttons {
+    width: 55px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    margin: 0 5px;
+}
+
+.buttons div {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 0 3px;
+}
+
+.buttons .close {
+    background: #ff5f57;
+    border: 1px solid #e45952;
+}
+
+.buttons .hide {
+    background: #ffbd2d;
+    border: 1px solid #e1a73e;
+}
+
+.buttons .full {
+    background: #27c93f;
+    border: 1px solid #2bac2d;
+}
+
+.windowinner {
+    width: 100%;
+    height: calc(100% - 20px - 1px);
+    display: flex;
+}
+
+.sidebar {
+    width: 35%;
+    height: 100%;
+    background-color: rgba(246, 246, 246, 0.8);
+    border-right: 1px solid #dfdfdf;
+    border-radius: 0 0 0 3px;
+    padding: 16px;
+}
+
+.contents {
+    width: 100%;
+    background: #fff;
+    padding: 16px;
+}
+
+/* スマホレスポンシブ */
+@media screen and (max-width: 480px) {
+    .windowinner {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: 40%;
+        border-right: none;
+        border-bottom: 1px solid #dfdfdf;
+        border-radius: 0 0 3px 3px;
+    }
+
+    .sidebar button {
+        margin-top: 10px;
+    }
+
+    .contents {
+        width: 100%;
+        height: 60%;
+    }
+}
